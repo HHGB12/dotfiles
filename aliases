@@ -1,7 +1,55 @@
-# Get External IP / local IPs
+	# Get External IP / local IPs
 alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+
+
+alias gst="git status"
+alias go="hub browse"
+alias at="atom ."
+alias hist="history"
+alias gco="git checkout"
+alias amend="git commit --amend"
+alias rc="rails c"
+
+
+#apple
+alias show="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder"
+alias nshow="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"
+
+#rails
+alias credd="EDITOR="atom --wait" rails credentials:edit"
+
+#github
+alias gpd="git push origin dev"
+alias gpm="git push origin master"
+alias gph="git push heroku master"
+alias ga="git add ."
+alias gc="git commit"
+alias gll="git log --pretty=oneline"
+alias gl="git log"
+alias com="ga && gc -m"
+alias gcount="git log --date=short --pretty=format:%ad | sort | uniq -c"
+
+#plugins
+alias lc='colorls -lA --sd'
+alias sf='colorls --sf'
+
+#serveurs
+alias wp="webpack-dev-server"
+alias rs="rails s"
+alias rsprod="rs -e production"
+alias rs1="bundle exec puma -C config/puma.rb -b tcp://127.0.0.1:3001"
+alias rs2="bundle exec puma -C config/puma.rb -b tcp://127.0.0.1:3002"
+alias rs3="bundle exec puma -C config/puma.rb -b tcp://127.0.0.1:3003"
+alias dropAll="rails db:drop db:create db:migrate db:seed"
+
+#heroku
+alias htail="heroku logs --tail"
+alias hdebug="HEROKU_DEBUG_RAILS_RUNNER=1"
+alias hdropAll="heroku pg:reset DATABASE_URL && heroku run rake db:migrate && heroku run rake db:seed"
+alias hbasic="heroku addons:create heroku-postgresql:hobby-basic --app staging-worker-worker"
+	
 
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
