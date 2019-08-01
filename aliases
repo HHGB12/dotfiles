@@ -28,6 +28,9 @@ alias ga="git add ."
 alias gc="git commit"
 alias gll="git log --pretty=oneline"
 alias gl="git log"
+
+# https://is.gd/ps5t12
+alias gb="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all" 
 alias com="ga && gc -m"
 alias gcount="git log --date=short --pretty=format:%ad | sort | uniq -c"
 
@@ -48,6 +51,7 @@ alias dropAll="rails db:drop db:create db:migrate db:seed"
 alias htail="heroku logs --tail"
 alias hdebug="HEROKU_DEBUG_RAILS_RUNNER=1"
 alias hdropAll="heroku pg:reset DATABASE_URL && heroku run rake db:migrate && heroku run rake db:seed"
+alias sdropAll="heroku pg:reset DATABASE_URL --remote staging && heroku run rake db:migrate --remote staging && heroku run rake db:seed --remote staging"
 alias hbasic="heroku addons:create heroku-postgresql:hobby-basic --app staging-worker-worker"
 	
 
